@@ -1,0 +1,124 @@
+.playlist {
+  &__header {
+    display: flex;
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: $text-secondary;
+  }
+  &__header-title {
+    width: 50%;
+    padding-left: 2.4rem;
+  }
+  &__header-time {
+    width: 50%;
+  }
+  &__song-info {
+    position: relative;
+  }
+  &__song-info > i {
+    font-size: 1.4rem;
+    color: $text-secondary;
+  }
+  &__song-check {
+    position: relative;
+    display: none;
+  }
+  &__song-check label:before {
+    filter: alpha(opacity=0);
+    opacity: 0;
+    content: "";
+    position: absolute;
+    width: 7px;
+    height: 3px;
+    background: transparent;
+    top: 3px;
+    left: 1px;
+    border: 2px solid #fcfff4;
+    border-top: none;
+    border-right: none;
+    transform: rotate(-45deg);
+  }
+  &__song-check input[type="checkbox"]:checked + label:before {
+    filter: alpha(opacity=100);
+    opacity: 1;
+  }
+  &__song-check input {
+    display: none;
+  }
+  &__song-check label {
+    cursor: pointer;
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    top: -7px;
+    right: -14px;
+    border-radius: 3px;
+    border: 1px solid $text-secondary;
+    box-shadow: inset 0px 1px 1px rgb(0 0 0 / 50%),
+      0px 1px 0px rgb(255 255 255 / 40%);
+    background: transparent;
+  }
+  &__list {
+    overflow: hidden overlay;
+    scroll-behavior: smooth;
+  }
+  &__list:hover::-webkit-scrollbar {
+    width: 0.4rem;
+    display: block;
+  }
+  &__list::-webkit-scrollbar {
+    cursor: pointer;
+    display: none;
+  }
+  &__list::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  &__list::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background-color: #888;
+  }
+  &__list-song {
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.25s linear;
+  }
+  &__list-song:hover,
+  &__list-song.active {
+    transition: all 0.25s linear;
+    background-color: $bg-content-color;
+  }
+
+  &__list-song .play-song--actions {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  &__list-song:hover &__song-info > i {
+    visibility: hidden;
+  }
+  &__list-song:hover .play-song--actions,
+  &__list-song:hover &__song-check,
+  &__lost-song.active .play-song-actions {
+    display: block;
+  }
+  &__song-body {
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  &__song-info {
+    width: 50%;
+  }
+  &__song-title {
+    max-width: 100%;
+    font-size: 1.4rem;
+    text-transform: capitalize;
+  }
+  &__song-title.info__title {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}

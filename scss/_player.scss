@@ -1,0 +1,89 @@
+.player {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 470;
+  background-color: $layout-bg;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.2rem 1.4rem;
+  &__container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  &__song-thumb {
+    width: 6.4rem;
+    height: 6.4rem;
+    border-radius: 50%;
+    position: relative;
+  }
+
+  &__container-song {
+    display: flex;
+    width: 30%;
+  }
+  &__song-title {
+    display: flex;
+    position: relative;
+    max-width: 19rem;
+    width: 95.5rem;
+    height: 1.9rem;
+    overflow: hidden;
+    font-weight: 500;
+    font-size: 1.4rem;
+    white-space: nowrap;
+  }
+  &__song-btn {
+    font-size: 1.4rem;
+  }
+  &__title-animate {
+    display: flex;
+    flex-wrap: nowrap;
+    position: absolute;
+  }
+  &__song-info {
+    width: unset;
+    flex-basis: auto;
+    will-change: transform;
+    transition: transform 0.5s;
+  }
+  &__song-options {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+  }
+  &__control {
+    display: flex;
+    width: 40%;
+    align-items: center;
+    flex-direction: column;
+  }
+  &__control-btn {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1.2rem;
+    align-items: center;
+  }
+  &__options {
+    width: 30%;
+  }
+  &__options-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  &__options-btn.option-btn .btn--icon {
+    font-size: 1.8rem;
+  }
+  &__volume-progress {
+    width: 7rem;
+    height: 2rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 4rem;
+    margin-left: 0.5rem;
+  }
+}

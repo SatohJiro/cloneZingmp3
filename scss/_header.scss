@@ -1,0 +1,126 @@
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  width: calc(100% - 24rem);
+  display: flex;
+  // justify-content: space-between;
+  padding: 0 3rem;
+  height: $header-height;
+  &__with-search {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+    width: 100%;
+  }
+  &__button {
+    color: $white-color;
+    font-size: 2.4rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+  }
+  &__button-icon {
+    margin-right: 2rem;
+  }
+  &__search {
+    display: flex;
+    position: relative;
+    z-index: 400;
+    padding: 1rem;
+    max-width: 54rem;
+    width: 100%;
+    height: 4rem;
+    border-radius: 2rem;
+    border: 1px solid transparent;
+    background-color: $bg-content-color;
+  }
+  &__search-btn {
+    position: absolute;
+    z-index: 400;
+    color: $placeholder-text;
+  }
+  &__search-history {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    visibility: hidden;
+    opacity: 0;
+    padding-top: 4rem;
+    z-index: 100;
+    background-color: $primary-bg;
+    border-radius: 2rem;
+  }
+  &__search-list {
+    padding: 1.2rem;
+    margin-top: 1.4rem;
+  }
+  &__search-item {
+    display: flex;
+    padding: 1rem;
+    cursor: pointer;
+  }
+  &__search-item:hover {
+    background-color: $bg-content-color;
+  }
+  &__search-input:focus ~ .header__search-history {
+    transition: all 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+    opacity: 1;
+    visibility: visible;
+  }
+  &__search-input {
+    position: absolute;
+    left: 10%;
+    top: 0;
+    height: 3.8rem;
+    width: calc(100% - 4.2rem);
+    padding-right: 2rem;
+    z-index: 400;
+    color: $text-color;
+    background-color: transparent;
+    font-size: 1.4rem;
+  }
+  &__search-input::placeholder {
+    color: currentColor;
+  }
+  &__search-icon {
+    font-size: 2rem;
+    margin-right: 1rem;
+    cursor: pointer;
+  }
+  &__item-link {
+    font-size: 1.4rem;
+  }
+  &__item-icon {
+    font-size: 1.6rem;
+    margin-right: 1rem;
+    color: $text-secondary;
+  }
+  &__nav {
+    max-width: 22.8rem;
+    width: 100%;
+    margin: auto;
+  }
+  &__nav-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+    align-items: center;
+  }
+  &__nav-btn {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: $bg-content-color;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+  }
+}
+#header__nav-input {
+  display: none;
+}

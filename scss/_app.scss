@@ -1,0 +1,103 @@
+//
+.app {
+  height: $app-height;
+  display: flex;
+  &__container {
+    position: relative;
+    top: 0;
+    flex: 1;
+    left: 0;
+    right: 0;
+    height: 100%;
+    scroll-behavior: smooth;
+    overflow: hidden overlay;
+    will-change: scroll-position;
+    overflow-anchor: none !important;
+    scroll-snap-stop: normal !important;
+    scroll-behavior: unset !important;
+    overscroll-behavior: unset !important;
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: $bg-content-color;
+      border-radius: 10px;
+    }
+  }
+  &__header {
+    width: 100%;
+    padding-top: 8.5rem;
+    position: relative;
+  }
+
+  &__header-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 18rem;
+    background: url("./assets//img/avatars/test=)).jpg") no-repeat center center /
+      cover;
+    filter: blur(5rem);
+  }
+  &__header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 29rem;
+    background-color: $layout-bg;
+    width: 100%;
+    opacity: 0.6;
+  }
+  &__header-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 29rem;
+    padding-top: 2rem;
+  }
+  &__header-user {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 20.5rem;
+    margin-bottom: 2rem;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &__user-name {
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin: 3rem 0 0.5rem;
+  }
+
+  &__header-actions {
+    display: flex;
+    position: absolute;
+    top: 8.5rem;
+    right: 3rem;
+  }
+  &__header-options {
+    position: relative;
+    font-size: 1.8rem;
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    background-color: $bg-content-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__user-img {
+    width: 9.5rem;
+    height: 9.5rem;
+    border-radius: 50%;
+  }
+}

@@ -1,0 +1,130 @@
+.container {
+  &__tab {
+    padding: 1.5rem;
+    display: none;
+  }
+  &__tab.active {
+    display: block;
+  }
+  &__tab.tab-song &__playlist {
+    width: 100%;
+  }
+  &__tab.tab-playlist &__header-actions,
+  &__tab.tab-album &__header-actions,
+  &__tab.tab-mv &__header-actions,
+  &__tab.tab-artist &__header-actions {
+    display: none;
+  }
+  &__tab.tab-playlist .no-wrap,
+  &__tab.tab-album .no-wrap,
+  &__tab.tab-mv .no-wrap,
+  &__tab.tab-artist .no-wrap {
+    flex-wrap: wrap;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+  &__header-title {
+    display: flex;
+    font-size: 2rem;
+    text-transform: capitalize;
+    align-items: center;
+    &:hover {
+      color: $link-text-hover;
+    }
+  }
+  &__header-actions {
+    display: flex;
+  }
+  &__header-input {
+    display: none;
+  }
+  &__header-label {
+    display: flex;
+  }
+  &__header-btn {
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    margin-left: 1.5rem;
+  }
+  &__header-btn:last-child {
+    i {
+      font-size: 2rem;
+    }
+  }
+  &__header-icon {
+    padding-right: 0.4rem;
+  }
+  &__control {
+    margin-bottom: 5rem;
+  }
+  &__playmusic {
+    display: flex;
+    width: 100%;
+    height: 24.4rem;
+  }
+  &__slide {
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+    width: 29rem;
+    padding-right: 2rem;
+  }
+  &__slide-show {
+    height: 24.4rem;
+    width: 23rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    transform-style: preserve-3d;
+    position: relative;
+  }
+  &__slide-item {
+    width: 23rem;
+    height: 23rem;
+    position: absolute;
+    transition: all 0.9s;
+    backface-visibility: hidden;
+    will-change: transform, opacity;
+    transform: perspective(1px) translateZ(0);
+  }
+  &__slide-item.first {
+    opacity: 1;
+    transform: translate3d(0, 0, 80px) scale(1, 1);
+  }
+  &__slide-item.second {
+    opacity: 0.7;
+    transform: translate3d(var(--offset-x-second), 0, 60px)
+      scale(var(--scale-rate-second), var(--scale-rate-second));
+  }
+  &__slide-item.third {
+    opacity: 0.9;
+    transform: translate3d(var(--offset-x-third), 0, 20px)
+      scale(var(--scale-rate-third), var(--scale-rate-third));
+  }
+  &__slide-item.fourth {
+    opacity: 0.1;
+    transform: translate3d(var(--offset-x-third), 0, 0)
+      scale(var(--scale-rate-third), var(--scale-rate-third));
+  }
+  &__slide-img {
+    width: 100%;
+    padding-top: 100%;
+    border-radius: 0.5rem;
+  }
+  &__move-btn {
+    font-size: 1.8rem;
+    margin: 0 1rem;
+    cursor: pointer;
+  }
+  &__playlist {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    width: calc(100% - 30rem);
+    flex-shrink: 0;
+  }
+}

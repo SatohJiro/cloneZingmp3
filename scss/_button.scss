@@ -1,0 +1,34 @@
+.button {
+  border: none;
+  outline: none;
+  display: flex;
+  cursor: pointer;
+  text-align: center;
+  font-size: 1.4rem;
+  align-items: center;
+  border-radius: 100px;
+  justify-content: center;
+  text-transform: uppercase;
+  color: $text-color;
+  background-color: $bg-content-color;
+  -webkit-tap-highlight-color: transparent;
+  &-gold {
+    background-color: #f8e71c;
+    color: $black-color;
+  }
+  &--disabled {
+    opacity: 0.3;
+    cursor: default !important;
+    user-select: none;
+  }
+  &.is-small {
+    line-height: 1.2rem;
+    font-size: 1.2rem;
+    height: 27px;
+    padding: 6px 19px;
+  }
+  &-primary {
+    background-color: $purple-primary;
+    color: $white-color;
+  }
+}

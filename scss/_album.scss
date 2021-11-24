@@ -1,0 +1,13 @@
+.album {
+  &__create-icon {
+    font-size: 3.9rem;
+    font-weight: 100;
+    color: $text-color;
+    -webkit-text-stroke: 2px rgb(153, 35, 146);
+    margin-bottom: 1.5rem;
+  }
+  &__create-annotate {
+    font-size: 1.4rem;
+    color: $text-color;
+  }
+}

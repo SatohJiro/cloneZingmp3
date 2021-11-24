@@ -1,0 +1,133 @@
+.close__btn-icon {
+  font-size: 2.2rem;
+  -webkit-text-stroke: 1px $primary-bg;
+}
+.modal {
+  &-theme {
+    display: none;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 500;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  &-theme.open {
+    display: block;
+  }
+  &-container {
+    position: inherit;
+    top: 50%;
+    left: 50%;
+    width: 70%;
+    max-width: 90rem;
+    min-height: 50rem;
+    max-height: 100%;
+    border-radius: 0.8rem;
+    scroll-behavior: smooth;
+    background-color: $primary-bg;
+    transform: translate(-50%, -50%);
+  }
+  &__close-btn {
+    position: absolute;
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    width: 3.4rem;
+    height: 3.4rem;
+    top: 1rem;
+    right: 1rem;
+  }
+}
+// theme
+.theme {
+  &__header {
+    padding: 2rem 3rem;
+  }
+  &__header-title {
+    text-transform: capitalize;
+    font-size: 2.4rem;
+  }
+  &__content {
+    height: 50rem;
+    padding: 0 3rem;
+    overflow: hidden overlay;
+    overscroll-behavior: contain;
+    will-change: scroll-position;
+  }
+  &__content::-webkit-scrollbar {
+    width: 5px;
+    z-index: 10;
+  }
+  &__content::-webkit-scrollbar-thumb {
+    border: 1rem;
+    background-color: $modal-scrollbar;
+  }
+  &__container-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 3.4rem;
+  }
+  &__container-item {
+    display: flex;
+    flex: 0 0 calc(100% / 6);
+    width: calc(100% / 6);
+    padding-right: 1rem;
+    flex-direction: column;
+  }
+
+  &__item-display {
+    width: 100%;
+    margin: 2rem 0 0.75rem;
+    cursor: pointer;
+    position: relative;
+    border-radius: 4px;
+    // padding: 0 0.25rem;
+  }
+  &__item-display:hover .overlay {
+    padding-top: 66.67%;
+  }
+  &__item-display:hover .overlay,
+  &__item-display:hover &__item-actions {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &__item-img {
+    padding-top: 66.67%;
+    border-radius: 0.5rem;
+  }
+  &__item-name {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  &__info-name {
+    font-size: 1.8rem;
+  }
+  &__item-actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    opacity: 0;
+  }
+  &__btn-title {
+    font-size: 0.8rem;
+  }
+  &__actions-btn {
+    padding: 0.6rem;
+    border: 0.8px solid $purple-primary;
+  }
+  &__actions-btn:last-child {
+    background-color: transparent;
+    border-color: $white-color;
+  }
+}
